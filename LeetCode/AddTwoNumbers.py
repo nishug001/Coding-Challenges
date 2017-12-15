@@ -27,25 +27,25 @@ class Solution(object):
         root_node = ListNode(0)
         node = root_node
 
-        while l1 != None:
+        while l1 is not None:
             first_integer = str(l1.val) + first_integer
             l1 = l1.next
 
-        while l2 != None:
+        while l2 is not None:
             second_integer = str(l2.val) + second_integer
             l2 = l2.next
 
-        sum = int(first_integer) + int(second_integer)
+        sum_of_integers = int(first_integer) + int(second_integer)
 
-        if sum == 0:
-            rem = sum % 10
+        if sum_of_integers == 0:
+            rem = sum_of_integers % 10
             node.next = ListNode(rem)
             node = node.next
 
-        while sum > 0:
-            rem = sum % 10
+        while sum_of_integers > 0:
+            rem = sum_of_integers % 10
             node.next = ListNode(rem)
             node = node.next
-            sum = sum / 10
+            sum_of_integers /= 10
 
         return root_node.next
