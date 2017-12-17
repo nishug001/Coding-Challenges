@@ -16,12 +16,11 @@ class Solution(object):
         """
         char_list = list(s)
         char_map = {}
+        j = 0
         max_len = 0
-        i = 0
-        for j in range(0, len(char_list)):
-            if char_list[j] in char_map:
-                i = max(i, char_map[char_list[j]])
-            max_len = max(max_len, j - i + 1)
-            char_map[char_list[j]] = j + 1
-
+        for i in range(0, len(char_list)):
+            if char_list[i] in char_map.keys():
+                j = max(j, char_map[char_list[i]])
+            max_len = max(max_len, i - j + 1)
+            char_map[char_list[i]] = i+1
         return max_len
