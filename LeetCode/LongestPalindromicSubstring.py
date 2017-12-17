@@ -43,7 +43,3 @@ class Solution(object):
         if self.maxLen < end - start - 1:
             self.lo = start + 1
             self.maxLen = end - start - 1
-
-
-obj = Solution()
-print(obj.longestPalindrome('madamm'))
